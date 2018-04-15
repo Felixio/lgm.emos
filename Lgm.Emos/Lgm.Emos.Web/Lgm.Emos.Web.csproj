@@ -10,6 +10,14 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lgm.Emos.Core\Lgm.Emos.Core.csproj" />
+    <ProjectReference Include="..\Lgm.Emos.Infrastructure\Lgm.Emos.Infrastructure.csproj" />
+  </ItemGroup>
 </Project>

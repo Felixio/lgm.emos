@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lgm.Emos.Web", "Lgm.Emos.Web\Lgm.Emos.Web.csproj", "{C4A26986-F96C-4762-85B4-3B7DC5A55F35}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lgm.Emos.Core", "Lgm.Emos.Core\Lgm.Emos.Core.csproj", "{E2951326-D520-46F0-8E61-C6496E1B1F50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lgm.Emos.Infrastructure", "Lgm.Emos.Infrastructure\Lgm.Emos.Infrastructure.csproj", "{5A62FA86-37DB-4845-B246-D7E8E0DCE46A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +17,13 @@ Global
 		{C4A26986-F96C-4762-85B4-3B7DC5A55F35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4A26986-F96C-4762-85B4-3B7DC5A55F35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4A26986-F96C-4762-85B4-3B7DC5A55F35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2951326-D520-46F0-8E61-C6496E1B1F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2951326-D520-46F0-8E61-C6496E1B1F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2951326-D520-46F0-8E61-C6496E1B1F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2951326-D520-46F0-8E61-C6496E1B1F50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A62FA86-37DB-4845-B246-D7E8E0DCE46A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A62FA86-37DB-4845-B246-D7E8E0DCE46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A62FA86-37DB-4845-B246-D7E8E0DCE46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A62FA86-37DB-4845-B246-D7E8E0DCE46A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
