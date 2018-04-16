@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\" />
     <Folder Include="Services\" />
-    <Folder Include="Identity\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lgm.Emos.Core\Lgm.Emos.Core.csproj" />

@@ -1,1 +1,8 @@
 /.DS_Store
+/Lgm.Emos/Lgm.Emos.Core/bin/Debug/netcoreapp2.0
+/Lgm.Emos/.vs
+/Lgm.Emos/Lgm.Emos.Core/obj
+/Lgm.Emos/Lgm.Emos.Infrastructure/bin/Debug/netcoreapp2.0
+/Lgm.Emos/Lgm.Emos.Infrastructure/obj
+/Lgm.Emos/Lgm.Emos.Web/bin/Debug/netcoreapp2.0
+/Lgm.Emos/Lgm.Emos.Web/obj
