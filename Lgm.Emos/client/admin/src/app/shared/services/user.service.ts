@@ -4,10 +4,10 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { UserRegistration } from '../models/user.registration.interface';
 import { ConfigService } from '../utils/config.service';
 
-import {BaseService} from "./base.service";
+import {BaseService} from './base.service';
 
 import { Observable } from 'rxjs/Rx';
-import { BehaviorSubject } from 'rxjs/Rx'; 
+import { BehaviorSubject } from 'rxjs/Rx';
 
 // Add the RxJS Observable operators we need in this app.
 import '../../rxjs-operators';
@@ -39,10 +39,10 @@ export class UserService extends BaseService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
-    return this.http.post(this.baseUrl + "/accounts", body, options)
+    return this.http.post(this.baseUrl + '/accounts', body, options)
       .map(res => true)
       .catch(this.handleError);
-  }  
+  }
 
    login(userName, password) {
     let headers = new Headers();
@@ -76,7 +76,7 @@ export class UserService extends BaseService {
   facebookLogin(accessToken:string) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    let body = JSON.stringify({ accessToken });  
+    let body = JSON.stringify({ accessToken });
     return this.http
       .post(
       this.baseUrl + '/externalauth/facebook', body, { headers })

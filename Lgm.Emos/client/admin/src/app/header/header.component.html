@@ -5,14 +5,14 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      
+
         <ul *ngIf="status" class="navbar-nav mr-auto">
             <li class="nav-item">
                <a class="nav-link" (click)="logout()" href="#">Logoff</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/dashboard">Dashboard</a> 
-            </li>         
+            <a class="nav-link" routerLinkActive="active" routerLink="/dashboard">Dashboard</a>
+            </li>
           </ul>
 
           <ul *ngIf="!status" class="nav navbar-nav">
@@ -22,11 +22,8 @@
             <li class="nav-item">
               <a class="nav-link" routerLinkActive="active" routerLink="/login">Email login</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLinkActive="active" routerLink="/facebook-login">Facebook signup/login</a>
-            </li>
           </ul>
-                     
+
     </div>
   </nav>
 </header>

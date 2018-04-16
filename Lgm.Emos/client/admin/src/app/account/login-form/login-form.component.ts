@@ -21,16 +21,16 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   submitted: boolean = false;
   credentials: Credentials = { email: '', password: '' };
 
-  constructor(private userService: UserService, private router: Router,private activatedRoute: ActivatedRoute) { }
+  constructor(private userService: UserService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
     ngOnInit() {
 
     // subscribe to router event
     this.subscription = this.activatedRoute.queryParams.subscribe(
       (param: any) => {
-         this.brandNew = param['brandNew'];   
-         this.credentials.email = param['email'];         
-      });      
+         this.brandNew = param['brandNew'];
+         this.credentials.email = param['email'];
+      });
   }
 
    ngOnDestroy() {
@@ -46,9 +46,9 @@ export class LoginFormComponent implements OnInit, OnDestroy {
       this.userService.login(value.email, value.password)
         .finally(() => this.isRequesting = false)
         .subscribe(
-        result => {         
+        result => {
           if (result) {
-             this.router.navigate(['/dashboard/home']);             
+             this.router.navigate(['/dashboard/home']);
           }
         },
         error => this.errors = error);
