@@ -41,7 +41,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   login({ value, valid }: { value: Credentials, valid: boolean }) {
     this.submitted = true;
     this.isRequesting = true;
-    this.errors='';
+    this.errors = '';
     if (valid) {
       this.userService.login(value.email, value.password)
         .finally(() => this.isRequesting = false)

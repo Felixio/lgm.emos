@@ -36,7 +36,7 @@ namespace AngularASPNETCore2WebApiAuth.Controllers
 
             return new OkObjectResult(new
             {
-                Message = "This is secure API and user data!",
+                Message = "API et données utilisateur sécurisées !",
                 emosUser.Identity.FirstName,
                 emosUser.Identity.LastName,
                 emosUser.Location,

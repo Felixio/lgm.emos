@@ -21,9 +21,8 @@ export class HomeComponent implements OnInit {
       this.homeDetails = homeDetails;
     },
     error => {
-      //this.notificationService.printErrorMessage(error);
+      // this.notificationService.printErrorMessage(error);
     });
-    
   }
 
 }
