@@ -3,7 +3,7 @@
 namespace Lgm.Emos.Web
 {
     [Validator(typeof(CredentialsViewModelValidator))]
-    public class RegistrationViewModel
+    public class RegistrationApiModel
     {
         public string UserName { get; set; }
         public string Password { get; set; }

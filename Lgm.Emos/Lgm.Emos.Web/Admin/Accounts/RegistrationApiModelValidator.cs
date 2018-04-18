@@ -4,9 +4,9 @@ using FluentValidation;
 
 namespace Lgm.Emos.Web
 {
-    public class RegistrationViewModelValidator : AbstractValidator<RegistrationViewModel>
+    public class RegistrationApiModelValidator : AbstractValidator<RegistrationApiModel>
     {
-        public RegistrationViewModelValidator()
+        public RegistrationApiModelValidator()
         {
             RuleFor(vm => vm.Email).NotEmpty().WithMessage("Email cannot be empty");
             RuleFor(vm => vm.Password).NotEmpty().WithMessage("Password cannot be empty");

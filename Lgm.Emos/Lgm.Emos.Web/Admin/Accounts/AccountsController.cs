@@ -24,7 +24,7 @@ namespace Lgm.Emos.Web.Controllers
 
         // POST api/accounts
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]RegistrationViewModel model)
+        public async Task<IActionResult> Post([FromBody]RegistrationApiModel model)
         {
             if (!ModelState.IsValid)
             {
