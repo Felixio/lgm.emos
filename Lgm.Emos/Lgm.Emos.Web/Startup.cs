@@ -56,6 +56,47 @@ namespace Lgm.Emos.Web
             });
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            AddSecurity(services);
+
+            services.AddAutoMapper();
+            AddApiDoc(services);
+            services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
+
+        }
+
+        private static void AddApiDoc(IServiceCollection services)
+        {
+            services.AddSwaggerGen(
+                            options =>
+                            {
+                                var provider = services.BuildServiceProvider()
+                                                    .GetRequiredService<IApiVersionDescriptionProvider>();
+
+                                foreach (var description in provider.ApiVersionDescriptions)
+                                {
+                                    options.SwaggerDoc(
+                                        description.GroupName,
+                                        new Info()
+                                        {
+                                            Title = $"Sample API {description.ApiVersion}",
+                                            Version = description.ApiVersion.ToString()
+                                        });
+                                }
+                            });
+
+            services.AddApiVersioning(config =>
+            {
+                config.ReportApiVersions = true;
+                config.AssumeDefaultVersionWhenUnspecified = true;
+                config.DefaultApiVersion = new ApiVersion(1, 0);
+                config.ApiVersionReader = new HeaderApiVersionReader("api-version");
+            });
+
+            services.AddMvcCore().AddVersionedApiExplorer(o => o.GroupNameFormat = "'v'VVV");
+        }
+
+        private void AddSecurity(IServiceCollection services)
+        {
             services.AddDbContext<IdentityAppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddSingleton<IJwtFactory, JwtFactory>();
@@ -120,37 +161,6 @@ namespace Lgm.Emos.Web
             });
             builder = new IdentityBuilder(builder.UserType, typeof(IdentityRole), builder.Services);
             builder.AddEntityFrameworkStores<IdentityAppDbContext>().AddDefaultTokenProviders();
-
-            services.AddAutoMapper();
-            services.AddSwaggerGen(
-                options =>
-                {
-                    var provider = services.BuildServiceProvider()
-                                        .GetRequiredService<IApiVersionDescriptionProvider>();
-
-                    foreach (var description in provider.ApiVersionDescriptions)
-                    {
-                        options.SwaggerDoc(
-                            description.GroupName,
-                            new Info()
-                            {
-                                Title = $"Sample API {description.ApiVersion}",
-                                Version = description.ApiVersion.ToString()
-                            });
-                    }
-                });
-
-            services.AddApiVersioning(config =>
-            {
-                config.ReportApiVersions = true;
-                config.AssumeDefaultVersionWhenUnspecified = true;
-                config.DefaultApiVersion = new ApiVersion(1, 0);
-                config.ApiVersionReader = new HeaderApiVersionReader("api-version");
-            });
-
-            services.AddMvcCore().AddVersionedApiExplorer(o => o.GroupNameFormat = "'v'VVV");
-            services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
